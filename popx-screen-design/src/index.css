@@ -1,13 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+:root { --purple: #6a00f5; --purple-700:#5700cc; --muted:#bdb4ff; --border:#e6e6e6; --text:#1a1a1a; --hint:#8d8d8d; --bg:#f7f8fb; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif; color: var(--text); background: var(--bg); }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+* { box-sizing: border-box; }
+
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
+
+.viewport { width: 100%; display: grid; place-items: center; }
+.phone { width: 360px; height: 740px; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column; }
+
+.section { padding: 24px; display: flex; flex-direction: column; height: 100%;  }
+.section.welcome { justify-content: space-between; }
+.title { margin: 24px 0 8px; font-size: 28px; font-weight: 800; letter-spacing: -0.3px; }
+.subtitle { margin: 0 0 16px; color: var(--hint); font-size: 14px; }
+.spacer16 { height: 16px; }
+
+.btn { display: block; width: 100%; height: 44px; line-height: 44px; text-align: center; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; text-decoration: none; }
+.btn.primary { background: var(--purple); color: #fff; }
+.btn.primary:active { background: var(--purple-700); }
+.btn.ghost { margin-top: 12px; background: #ece5ff; color: #3a2a7b; }
+.btn.disabled { background: #d8d8d8; color: #fff; cursor: not-allowed; }
+
+.form-title { white-space: pre-line; margin: 8px 0 6px; font-size: 26px; font-weight: 800; }
+.field { display: block; margin: 14px 0; }
+.label { display: block; color: var(--purple); font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.field input { width: 100%; height: 40px; border-radius: 6px; border: 1px solid var(--border); padding: 10px 12px; font-size: 14px; }
+
+.radio-group { margin: 10px 0 18px; }
+.radios { display: flex; gap: 16px; margin-top: 8px; }
+.radio { display: inline-flex; align-items: center; gap: 8px; color: #4a4a4a; }
+
+.settings-title { margin: 12px 0 10px; font-weight: 700; }
+.card.profile { display: flex; align-items: center; gap: 12px; padding: 14px; border: 1px solid var(--border); border-radius: 8px; }
+.avatar { width: 56px; height: 56px; border-radius: 50%; }
+.profile-texts .name { font-weight: 700; }
+.profile-texts .email { color: var(--hint); font-size: 14px; }
+.lorem { color: #5f5f5f; font-size: 13px; line-height: 1.5; border-top: 1px dashed var(--border); margin: 14px 0 0; padding-top: 14px; }
